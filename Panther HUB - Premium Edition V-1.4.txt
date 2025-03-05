@@ -530,13 +530,14 @@ AutoFarmTab:CreateToggle({
 })
 
 --------------------------------------------------------------------------------
--- 3) LOG USAGE (BUYER ID & USERNAME)
+-- 3) LOG USAGE (BUYER ID & USERNAME) + DEBUG STEPS
 --------------------------------------------------------------------------------
--- Replace "Buyer_ABC123" with each buyer's unique ID
--- Replace "http://YourSubdomain.epizy.com/usageLogger.php" with your real URL
 
-local buyerID = "Buyer_ABC123"
+print("About to log usage...")  -- Step 2: Debug message
+
+local buyerID = "Buyer_ABC123"  -- Replace with your buyer's unique ID
 local userName = game.Players.LocalPlayer.Name
 local url = "http://ant.free.nf/usageLogger.php?buyerid="..buyerID.."&user="..userName
-game:HttpGet(url)
 
+local response = game:HttpGet(url)  -- Step 3: Capture the server's response
+print("Server says:", response)     -- Step 3: Print server response
