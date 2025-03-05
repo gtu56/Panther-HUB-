@@ -536,6 +536,6 @@ AutoFarmTab:CreateToggle({
 -- Replace "http://YourSubdomain.epizy.com/usageLogger.php" with your real URL
 
 local buyerID = "Buyer_ABC123"
-local userName = game.Players.LocalPlayer.Ant
+local userName = game.Players.LocalPlayer.Name
 local url = "http://ant.free.nf/usageLogger.php"..buyerID.."&user="..userName
 game:HttpGet(url)
