@@ -71,7 +71,6 @@ function MyUILibrary:CreateWindow(options)
     -- Draggable top bar with transparent background
     local titleBar = Instance.new("TextLabel")
     titleBar.BackgroundTransparency = 1  -- Fully transparent background
-    -- (No background color is applied)
     titleBar.Size                   = UDim2.new(1, -70, 0, 40)
     titleBar.Font                   = Enum.Font.GothamBold
     titleBar.TextSize               = 13
@@ -529,3 +528,14 @@ AutoFarmTab:CreateToggle({
         end
     end
 })
+
+--------------------------------------------------------------------------------
+-- 3) LOG USAGE (BUYER ID & USERNAME)
+--------------------------------------------------------------------------------
+-- Replace "Buyer_ABC123" with each buyer's unique ID
+-- Replace "http://YourSubdomain.epizy.com/usageLogger.php" with your real URL
+
+local buyerID = "Buyer_ABC123"
+local userName = game.Players.LocalPlayer.Ant
+local url = "http://ant.free.nf/usageLogger.php"..buyerID.."&user="..userName
+game:HttpGet(url)
