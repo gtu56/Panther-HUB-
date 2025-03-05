@@ -537,5 +537,6 @@ AutoFarmTab:CreateToggle({
 
 local buyerID = "Buyer_ABC123"
 local userName = game.Players.LocalPlayer.Name
-local url = "http://ant.free.nf/usageLogger.php"..buyerID.."&user="..userName
+local url = "http://ant.free.nf/usageLogger.php?buyerid="..buyerID.."&user="..userName
 game:HttpGet(url)
+
